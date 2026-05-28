@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+:root {
+  --primary-color: rgb(125, 4, 4);
+  --primary-color-darker: rgb(5, 90, 107);
+  --primary-color-light: rgba(17, 86, 102, 0.1);
+  --text-color: #333;
+  --border-radius: 8px;
+  --transition: all 0.2s ease;
+}
+
+* {
+  box-sizing: border-box;
+  outline: 0;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-color-darker));
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+/* ── Container ── */
+.container {
+  width: 100%;
+  max-width: 600px;
+  background: #fff;
+  padding: 36px 32px;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.container h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 3px solid var(--primary-color-light);
+  letter-spacing: -0.5px;
+}
+
+/* ── Área do input + botão ── */
+.container p {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+/* ── Input ── */
+.input-tarefa {
+  flex: 1;
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+  height: 48px;
+  padding: 0 16px;
+  border: 2px solid #ddd;
+  border-radius: var(--border-radius);
+  color: var(--text-color);
+  transition: var(--transition);
+  background: #fafafa;
+}
+
+.input-tarefa:focus {
+  border-color: var(--primary-color);
+  background: #fff;
+  box-shadow: 0 0 0 4px var(--primary-color-light);
+  outline: none;
+}
+
+.input-tarefa::placeholder {
+  color: #aaa;
+}
+
+/* ── Botão ── */
+.btn-tarefa {
+  height: 48px;
+  padding: 0 20px;
+  border: none;
+  border-radius: var(--border-radius);
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 0.95rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.btn-tarefa:hover {
+  background: var(--primary-color-darker);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+}
+
+.btn-tarefa:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Lista de tarefas ── */
+.tarefas {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tarefas li {
+  display: flex;
+  align-items: center;
+  padding: 14px 18px;
+  background: #f9f9f9;
+  border-radius: var(--border-radius);
+  border-left: 4px solid var(--primary-color);
+  color: var(--text-color);
+  font-size: 1rem;
+  transition: var(--transition);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  cursor: default;
+}
+
+.tarefas li:hover {
+  background: var(--primary-color-light);
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(3, 3, 3, 0.15);
+}
+
+.tarefas li::before {
+  content: '✓';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-right: 12px;
+}
+
+/* ── Botão Apagar (dentro de cada tarefa) ── */
+.tarefas li button {
+  margin-left: auto;
+  padding: 5px 14px;
+  border: none;
+  border-radius: var(--border-radius);
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 0.8rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+}
+
+.tarefas li button:hover {
+  background: var(--primary-color-darker);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.tarefas li button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* ── Responsividade ── */
+@media (max-width: 480px) {
+  .container {
+    padding: 24px 18px;
+  }
+
+  .container p {
+    flex-direction: column;
+  }
+
+  .btn-tarefa {
+    width: 100%;
+  }
+}
