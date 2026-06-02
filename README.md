@@ -1,5 +1,8 @@
 # Lista de Tarefas — JavaScript, DOM & LocalStorage
 
+Link para rodar o código: https://rodrigogrnja.github.io/ListaDeTarefas-JS/
+
+
 
 
 Projeto de uma aplicação de lista de tarefas desenvolvida com JavaScript puro, focada em manipulação dinâmica do DOM, tratamento de eventos e persistência de dados utilizando JSON + LocalStorage.
